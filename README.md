@@ -2,7 +2,17 @@
 
 ![image](https://user-images.githubusercontent.com/96854855/232969587-555ec793-57de-4c32-9c29-29c1eb6fe156.png)
 
-在油猴中安装该脚本，可以在chatGPT对话框中出现 Prompt 的按钮，支持一键导入对应的角色训练词
+## 安装步骤
+
+一、将`src/index.js`的内容复制到油猴或脚本猫中
+
+![image](https://user-images.githubusercontent.com/96854855/232970389-4cfcb883-ec83-4f31-bea2-20ddbbc4ccf2.png)
+
+二、在油猴中安装该脚本
+
+## 脚本功能
+
+可以在chatGPT对话框中出现 Prompt 的按钮，支持一键导入对应的角色训练词
 
 帮助你更好的训练chatGPT，回复你的问题
 
