@@ -4,7 +4,7 @@
 
 帮助你更好的训练chatGPT，回复你的问题
 
-自行添加 `Prompt`
+可自行添加 `Prompt`
 
 [让生产力加倍的 ChatGPT 快捷指令](https://github.com/rockbenben/ChatGPT-Shortcut)
 
