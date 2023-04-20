@@ -8,7 +8,7 @@
 
 ![image](https://user-images.githubusercontent.com/96854855/232970389-4cfcb883-ec83-4f31-bea2-20ddbbc4ccf2.png)
 
-二、在油猴中安装该脚本
+二、在油猴中安装该脚本[点击下载安装](https://greasyfork.org/zh-CN/scripts/464448-chatgpt%E5%B0%8F%E5%8A%A9%E6%89%8B)
 
 ## 脚本功能
 
