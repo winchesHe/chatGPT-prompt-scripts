@@ -1,9 +1,9 @@
 /*!
 // ==UserScript==
-// @name          ChatGPT小助手
+// @name          ChatGPT 智能 Prompts 训练模型助手
 // @namespace     https://github.com/winchesHe/chatGPT-prompt-scripts
 // @version       0.0.1
-// @description   ChatGPT 小助手可以为你带来更好的使用体验：添加快捷指令（prompts）
+// @description   ChatGPT 智能 Prompts 可以为你带来更好的使用体验助你训练好用的ChatGPT：添加快捷指令（prompts）
 // @author        winchesHe
 // @match         *://chat.openai.com/*
 // @grant         none
