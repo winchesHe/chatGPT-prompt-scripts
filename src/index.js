@@ -514,9 +514,29 @@
     rootEle.innerHTML = "<div id=\"chatgptHelperOpen\" class=\"fixed top-1/2 right-1 z-50 p-3 rounded-md transition-colors duration-200 text-white cursor-pointer border border-white/20 bg-gray-900 hover:bg-gray-700 -translate-y-1/2\">\u5FEB<br>\u6377<br>\u6307<br>\u4EE4</div><div id=\"chatgptHelperMain\" class=\"fixed top-0 right-0 bottom-0 z-50 flex flex-col px-3 w-96 text-gray-100 bg-gray-900\" style=\"transform: translateX(100%); transition: transform 0.2s;\"><div class=\"py-4 pl-3\"><a href=\"https://github.com/maomao1996/tampermonkey-scripts\" target=\"_blank\">ChatGPT \u5C0F\u52A9\u624B\uFF08\u5FEB\u6377\u6307\u4EE4\uFF09</a></div><ul class=\"flex flex-1 overflow-y-auto py-4 border-y border-white/20 text-sm\" style=\"flex-wrap: wrap\">".concat(SHORTCUTS.map(function (_a) {
         var label = _a[0], value = _a[1];
         return "<li class=\"mr-2 mb-2 py-1 px-3 rounded-md hover:bg-gray-700 cursor-pointer\" data-value=\"".concat(encodeURI(value), "\">").concat(label, "</li>");
-    }).join(''), "</ul><div class=\"flex items-center py-4\"><div id=\"chatgptHelperClose\" class=\"py-2 px-3 rounded-md cursor-pointer hover:bg-gray-700\">\u5173\u95ED</div><div class=\"flex-1 pr-3 text-right text-sm\"><a class=\"py-2 px-3 rounded-md hover:bg-gray-700\" href=\"https://gitee.com/fe-mm/picture/raw/main/sponsor/sponsor.jpg\" target=\"_blank\">\u7292\u52B3\u4F5C\u8005</a></div></div></div></div>");
+    }).join(''), `</ul><div class=\"flex items-center py-4\"><div id=\"chatgptHelperClose\" class=\"py-2 px-3 rounded-md cursor-pointer hover:bg-gray-700\">\u5173\u95ED</div><div class=\"flex-1 pr-3 text-right text-sm items-center\">
+    <label class="flex items-center cursor-pointer" style="display: inline-block;">
+        <input type=\"checkbox\" id=\"isPain\" style="border-radius: 20px; margin-bottom: 3px;">
+        <span>是否固定面板</span>
+    </label>
+    <label class=\"flex items-center ml-2 cursor-pointer\" style="display: inline-block;">
+        <input type=\"checkbox\" id=\"isAutoSend\" style="border-radius: 20px; margin-bottom: 3px;">
+        <span>是否自动发送</span>
+    </label>
+    </div></div></div></div>`);
+
+    
+    // 创建一个新的 KeyboardEvent 事件对象
+    const keyEvent = new KeyboardEvent('keydown', {
+        key: 'Enter',
+        bubbles: true,
+        cancelable: true,
+        keyCode: 13,
+    });
     rootEle.querySelector('ul').addEventListener('click', function (event) {
         var target = event.target;
+        const isAutoSend = document.getElementById('isAutoSend').checked;
+        const isPain = document.getElementById('isPain').checked;
         if (target.nodeName === 'LI') {
             var value = target.getAttribute('data-value');
             if (value) {
@@ -524,11 +544,17 @@
                 textareaEle_1.value = decodeURI(value);
                 textareaEle_1.dispatchEvent(new Event('input', { bubbles: true }));
                 setTimeout(function () {
-                    textareaEle_1.focus();
+                    if (isAutoSend) {
+                        textareaEle_1.dispatchEvent(keyEvent)
+                    } else {
+                        textareaEle_1.focus();
+                    }
                 }, 1e3);
             }
+            if (!isPain) {
+                chatgptHelperMain.style.transform = 'translateX(100%)';
+            }
         }
-        chatgptHelperMain.style.transform = 'translateX(100%)';
     });
     document.body.appendChild(rootEle);
     var chatgptHelperMain = document.querySelector('#chatgptHelperMain');
