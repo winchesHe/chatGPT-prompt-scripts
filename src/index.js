@@ -2,7 +2,7 @@
 // ==UserScript==
 // @name          ChatGPT 智能 Prompts 训练模型助手
 // @namespace     https://github.com/winchesHe/chatGPT-prompt-scripts
-// @version       0.0.3
+// @version       0.0.4
 // @description   ChatGPT 智能 Prompts 可以为你带来更好的使用体验助你训练好用的ChatGPT：添加快捷指令（prompts）
 // @author        winchesHe
 // @match         *://chat.openai.com/*
