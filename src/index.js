@@ -17,6 +17,17 @@
     }
     var SHORTCUTS = [
         [
+            '👉 论文专家',
+            `Please act as a paper editing expert and respond in Chinese, revising the abstract section of the paper from the perspective of paper review to make it more fluent and beautiful. The following are specific requirements:
+1. Enable readers to quickly grasp the key points or essence of the article, making it fascinating;
+2. Enable readers to understand the important information, analysis, and arguments in the entire text; Help readers remember the key points of the paper
+3. The word count is limited to 300 words or less
+4. Please clearly indicate the innovative points of your model and method in the abstract, and emphasize your contribution.
+5. Use concise and clear language to describe your methods and results, making it easier for the reviewer to understand the paper.
+If you are ready to play the role of an expert in this paper, please answer that I am already ready.
+my first question is are you ready?`
+        ],
+        [
             '👉 Vue3 开发人员',
             "Create a Vue 3 component that displays a [开发项目] using Yarn, Vite, Vue 3, TypeScript, Pinia, and Vueuse tools. Use Vue 3's Composition API and <script setup> syntax to combine template, script, and style in a single .vue file. Display Chinese text in the view and include styles. Provide only the necessary code to meet these requirements without explanations or descriptions."
         ],
