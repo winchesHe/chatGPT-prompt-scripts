@@ -2,8 +2,8 @@
 // ==UserScript==
 // @name          ChatGPT 智能 Prompts 训练模型助手
 // @namespace     https://github.com/winchesHe/chatGPT-prompt-scripts
-// @version       0.0.4
-// @description   ChatGPT 智能 Prompts 可以为你带来更好的使用体验助你训练好用的ChatGPT：添加快捷指令（prompts）
+// @version       0.0.5
+// @description   ChatGPT 智能 Prompts 可以为你带来更好的使用体验助你训练好用的ChatGPT：添加快捷指令（prompts）新增：论文专家角色、支持自动发送、固定智能助手...还有更多需求可以到仓库Issues里发起！
 // @author        winchesHe
 // @match         *://chat.openai.com/*
 // @grant         none
