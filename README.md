@@ -1,6 +1,6 @@
 ## chatGPT 插件脚本 中文 Prompt 训练对话框
 
-![image](https://user-images.githubusercontent.com/96854855/232969587-555ec793-57de-4c32-9c29-29c1eb6fe156.png)
+![image](https://user-images.githubusercontent.com/96854855/233815815-1448b7c6-50b0-478c-8ec4-86e3642f6738.png)
 
 ## 安装步骤
 
