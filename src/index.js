@@ -6,6 +6,7 @@
 // @description   ChatGPT 智能 Prompts 可以为你带来更好的使用体验助你训练好用的ChatGPT：添加快捷指令（prompts）新增：论文专家角色、支持自动发送、固定智能助手...还有更多需求可以到仓库Issues里发起！
 // @author        winchesHe
 // @match         *://chat.openai.com/*
+// @match         *chatgpt.com/*
 // @grant         none
 // ==/UserScript==
 */
@@ -17,7 +18,7 @@
     }
     var SHORTCUTS = [
         [
-            '📚 anki 卡片'，
+            '📚 anki 卡片',
             `嘿，我会给你一个主题，请帮我搜索有关主题的信息。我想基于您找到的内容创建Anki卡片。请把卡片填写在markdown表格中，一个表格包含多张anki卡片，确保表格的第一行固定为（问题/答案/细节/标签），并在每次制造卡片后，询问我还需要制造什么主题的卡片。准备好后，请回复："我已掌握如何回答主题并创建anki卡片，请给我一个主题，我会回答并为您制作多张anki卡片。"
 在制作anki卡片时，请遵循下述要求：
 - 保持anki卡片的简单、清晰，并集中于最重要的信息。
@@ -36,7 +37,7 @@
 | 问题 | 答案 | 细节 | 标签 |
 | --- | --- | --- | --- |
 | 示例问题 | 示例答案 | 示例细节 | 示例标签 |`
-        ]
+        ],
         [
             '✨ 代码转流程图',
             `任务：解析代码，并使用mermaid语言将\`\`\`圈起来的代码转成逻辑图
@@ -600,9 +601,15 @@ my first question is are you ready?`
         if (target.nodeName === 'LI') {
             var value = target.getAttribute('data-value');
             if (value) {
-                var textareaEle_1 = document.querySelector('textarea');
-                textareaEle_1.value = decodeURI(value);
-                textareaEle_1.dispatchEvent(new Event('input', { bubbles: true }));
+               
+                var textareaEle_1 = document.getElementById('prompt-textarea');
+                textareaEle_1.innerHTML = "";
+                // 创建新的 <p> 元素
+                var pElement = document.createElement('p');
+                pElement.textContent = decodeURI(value);
+                // 将 <p> 元素插入到 <div> 中
+                textareaEle_1.appendChild(pElement);
+
                 setTimeout(function () {
                     if (isAutoSend) {
                         textareaEle_1.dispatchEvent(keyEvent)
